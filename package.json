@@ -7,7 +7,9 @@
     "db:drop": "export $(cat .env | xargs) && npx sequelize-cli db:drop",
     "db:create": "export $(cat .env | xargs) && npx sequelize-cli db:create",
     "db:migrate": "export $(cat .env | xargs) && npx sequelize-cli db:migrate",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "build:css": "npx @tailwindcss/cli -i ./public/css/input.css -o ./public/css/style.css --watch"
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,7 @@
     "sequelize": "^6.37.7"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "^4.2.1",
     "nodemon": "^3.1.14",
     "sequelize-cli": "^6.6.5",
     "tailwindcss": "^4.2.1"
